@@ -17,12 +17,6 @@ from langchain.tools import Tool
 from langchain.chat_models import ChatOpenAI
 from langchain import PromptTemplate
 app=Flask(__name__)
-os.environ["ALPHAVANTAGE_API_KEY"] = "L1KTO4ZKDMJSE4JZ"
-os.environ["SERPER_API_KEY"] = "f056c5462fa73b8addd41a49a73b515a741a632a"
-os.environ["GOOGLE_CSE_ID"] = "f2b97ee41733f4710"
-os.environ["GOOGLE_API_KEY"] = "AIzaSyA1Qz28QhouL5-QbD93lSObWq47PDZ-6F4"
-os.environ["OPENAI_API_KEY"] = "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"
-os.environ["SERPAPI_API_KEY"] = "b6517fbc933f4c0c11b19384b1b75e0fa2fa02e69ac22995a5d989c00a4f3a60"
 #code to return the top5 news of the given stock
 def get_stock_price(ticker,history=5):
     # time.sleep(4) #To avoid rate limit error
