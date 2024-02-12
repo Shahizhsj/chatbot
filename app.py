@@ -3,28 +3,22 @@ from flask import Flask, request, jsonify
 import os
 from langchain.schema.language_model import BaseLanguageModel
 from langchain.llms import OpenAI as LangChainOpenAI
-from langchain_community.utilities.alpha_vantage import AlphaVantageAPIWrapper
-import os
 import pprint
 from bs4 import BeautifulSoup
 import requests
 import yfinance as yf
 import re
-import yfinance as yf
 import pandas as pd
 import pandas_ta as ta
 from langchain.tools import DuckDuckGoSearchRun
 from langchain.agents import initialize_agent
 from langchain.agents import Tool
-import os
 #from langchain_community.tools.yahoo_finance_news import YahooFinanceNewsTool
 from langchain.agents import AgentType, initialize_agent, load_tools
 from langchain_openai import OpenAI
 from langchain_openai import OpenAI
 from langchain.tools import Tool
 from langchain.chat_models import ChatOpenAI
-
-
 from langchain import PromptTemplate
 app=Flask(__name__)
 os.environ["ALPHAVANTAGE_API_KEY"] = "L1KTO4ZKDMJSE4JZ"
