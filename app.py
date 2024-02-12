@@ -23,7 +23,7 @@ from langchain_openai import OpenAI
 from langchain_openai import OpenAI
 from langchain.tools import Tool
 from langchain.chat_models import ChatOpenAI
-from langchain_community.utilities import GoogleSearchAPIWrapper
+
 
 from langchain import PromptTemplate
 app=Flask(__name__)
@@ -128,7 +128,7 @@ def get_stock_analysis(ticker):
 @app.route("/analyze")
 def analyze():
     search = DuckDuckGoSearchRun()
-    search = GoogleSearchAPIWrapper()
+    
     ls = [
     Tool(
         name="get stock data",
