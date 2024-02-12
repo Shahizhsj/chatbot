@@ -1,8 +1,6 @@
 import getpass
 from flask import Flask, request, jsonify
 import os
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.llms import OpenAI as LangChainOpenAI
 import pprint
 from bs4 import BeautifulSoup
 import requests
@@ -15,8 +13,6 @@ from langchain.agents import initialize_agent
 from langchain.agents import Tool
 #from langchain_community.tools.yahoo_finance_news import YahooFinanceNewsTool
 from langchain.agents import AgentType, initialize_agent, load_tools
-from langchain_openai import OpenAI
-from langchain_openai import OpenAI
 from langchain.tools import Tool
 from langchain.chat_models import ChatOpenAI
 from langchain import PromptTemplate
@@ -27,17 +23,6 @@ os.environ["GOOGLE_CSE_ID"] = "f2b97ee41733f4710"
 os.environ["GOOGLE_API_KEY"] = "AIzaSyA1Qz28QhouL5-QbD93lSObWq47PDZ-6F4"
 os.environ["OPENAI_API_KEY"] = "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"
 os.environ["SERPAPI_API_KEY"] = "b6517fbc933f4c0c11b19384b1b75e0fa2fa02e69ac22995a5d989c00a4f3a60"
-
-class OpenAIWrapper(BaseLanguageModel):
-    def __init__(self):
-        self.llm = OpenAI()
-
-    def generate(self, prompts, **kwargs):
-        # Implement the generate method using self.llm
-        pass
-
-    # Implement other required methods...
-
 #code to return the top5 news of the given stock
 def get_stock_price(ticker,history=5):
     # time.sleep(4) #To avoid rate limit error
