@@ -14,8 +14,8 @@ from langchain.agents import Tool
 #from langchain_community.tools.yahoo_finance_news import YahooFinanceNewsTool
 from langchain.agents import AgentType, initialize_agent, load_tools
 from langchain.tools import Tool
-from langchain.chat_models import ChatOpenAI
 from langchain import PromptTemplate
+from langchain_google_genai import GoogleGenerativeAI
 app=Flask(__name__)
 #code to return the top5 news of the given stock
 def get_stock_price(ticker,history=5):
@@ -127,7 +127,7 @@ def analyze():
     ) 
 ]
 
-    llm =ChatOpenAI()
+    llm = GoogleGenerativeAI(model="gemini-pro")
     tools = load_tools(["google-search", "google-serper"], llm=llm)+ls
     agent = initialize_agent(tools, llm=llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True,handle_parsing_errors=True)
 
@@ -191,7 +191,7 @@ Potential Challenges: [Briefly list any potential challenges or risks associated
 Conclusion:
 Summarize the recommendation and provide any final thoughts or suggestions for the user.
 exception:
-if the user asks some general questions which are not realted to trading you can just respond to him in formal way
+if the user asks some general questions which are not realted to trading or stocks or finance,then try to respond by ourself
 Disclaimer:
 Include a disclaimer noting that the recommendation is based on the current market analysis and is subject to change. Remind users to perform their own research before making trading decisions.
 query:"""
