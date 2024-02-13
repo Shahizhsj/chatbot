@@ -155,7 +155,11 @@ Always ensure the analysis is up-to-date, relying on the most recent data and ma
 Your goal is to deliver precise, concise, and actionable insights to assist users in making
 informed investment decisions.
 Note:you should use only avilable tools in the efficient manner and you should get the all the informantion at any cost and if you have limited resource try to gather more and more
-you should answer the user still you have limited resources 
+you should answer the user still you have limited resources
+Disclaimer:
+Include a disclaimer noting that the recommendation is based on the current market analysis and is subject to change. Remind users to perform their own research before making trading decisions.
+Note:
+you should answer the user very fastly and with very quickly
 output formant:
 Analysis Type: Technical | Sentimental | Fundamental | Combined
 Overview:
@@ -187,11 +191,7 @@ Potential Challenges: [Briefly list any potential challenges or risks associated
 Conclusion:
 Summarize the recommendation and provide any final thoughts or suggestions for the user.
 exception:
-if the user asks some general questions which are not realted to trading or stocks or finance,then try to respond by ourself
-Disclaimer:
-Include a disclaimer noting that the recommendation is based on the current market analysis and is subject to change. Remind users to perform their own research before making trading decisions.
-Note:
-you should answer the user very fastly and with very quickly
+if the user asks some general questions which are not realted to trading or stocks or finance,then try to respond by ourself and if the user question's answer can not be converted into the above foramt,then try to generate the answer in the best possible format
 query:"""
 
     # Use the agent to process the query
