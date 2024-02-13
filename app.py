@@ -125,7 +125,7 @@ def analyze():
 
     llm = GoogleGenerativeAI(model="gemini-pro")
     tools = load_tools(["google-search", "google-serper"], llm=llm)+ls
-    agent = initialize_agent(tools, llm=llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True,handle_parsing_errors=True)
+    agent = initialize_agent(tools, llm=llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True,handle_parsing_errors=True, max_execution_time=5)
 
     query = request.args.get('query', default='*', type=str)
     p="""As a trading expert and intelligence member of the market, your task is to analyze
