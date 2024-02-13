@@ -5,7 +5,7 @@ yfinance
 pandas
 pandas-ta
 duckduckgo-search
-google-api-python-client>=2.100.0
+google-api-python-client
 langchain_google_genai
-langchain==0.0.316
+langchain
 gunicorn
