@@ -1,4 +1,3 @@
-import getpass
 from flask import Flask, request, jsonify
 import os
 import pprint
@@ -9,12 +8,9 @@ import re
 import pandas as pd
 import pandas_ta as ta
 from langchain.tools import DuckDuckGoSearchRun
-from langchain.agents import initialize_agent
 from langchain.agents import Tool
-#from langchain_community.tools.yahoo_finance_news import YahooFinanceNewsTool
 from langchain.agents import AgentType, initialize_agent, load_tools
 from langchain.tools import Tool
-from langchain import PromptTemplate
 from langchain_google_genai import GoogleGenerativeAI
 app=Flask(__name__)
 #code to return the top5 news of the given stock
