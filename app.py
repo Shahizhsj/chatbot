@@ -191,7 +191,8 @@ Potential Challenges: [Briefly list any potential challenges or risks associated
 Conclusion:
 Summarize the recommendation and provide any final thoughts or suggestions for the user.
 exception:
-if the user asks some general questions which are not realted to trading or stocks or finance,then try to respond by ourself and if the user question's answer can not be converted into the above foramt,then try to generate the answer in the best possible format
+if the user asks some general questions which are not realted to trading or stocks or finance,then try to respond by ourself and if the user question's answer can not be converted into the above foramt,then try to convert it into that format
+Please make sure that you represented th answer in the above mentioned format(you should do it)
 query:"""
 
     # Use the agent to process the query
