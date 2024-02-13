@@ -125,7 +125,7 @@ def analyze():
 
     llm = GoogleGenerativeAI(model="gemini-pro")
     tools = load_tools(["google-search", "google-serper"], llm=llm)+ls
-    agent = initialize_agent(tools, llm=llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True,handle_parsing_errors=True, max_execution_time=5)
+    agent = initialize_agent(tools, llm=llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True,handle_parsing_errors=True, max_execution_time=20)
 
     query = request.args.get('query', default='*', type=str)
     p="""As a trading expert and intelligence member of the market, your task is to analyze
@@ -190,6 +190,8 @@ exception:
 if the user asks some general questions which are not realted to trading or stocks or finance,then try to respond by ourself
 Disclaimer:
 Include a disclaimer noting that the recommendation is based on the current market analysis and is subject to change. Remind users to perform their own research before making trading decisions.
+Note:
+you should answer the user very fastly and with very quickly
 query:"""
 
     # Use the agent to process the query
